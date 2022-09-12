@@ -1,9 +1,4 @@
-# Container image source for <course>
-Info here about where to find and run this image.
-
-# Template instructions (**DELETE THIS SECTION**)
-
-* Uncomment and add necessary libraries to Containerfile
-* mv Jenkinsfile.template to Jenkinsfile
-* Update image variable and add tests to Jenkinsfile
+# Container image source for MCDB-170
+This container image provides a single user image for use with JupyterHub to provide a working environment for Molecular, Cellular, and Developmental Biology 170 - Programming in Biology.
+The container image can be obtained from https://hub.docker.com/r/ucsb/mcdb-170 and with `podman pull docker.io/ucsb/mcdb-170`
 
