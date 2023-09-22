@@ -20,7 +20,7 @@ pipeline {
                 stage('Test') {
                     steps {
                         // biopython gets imported as 'Bio' and scikit-image gets imported as 'skimage'
-                        sh 'podman run -it --rm localhost/$IMAGE_NAME python -c "import numpy; import scipy; import matplotlib; import pandas; import Bio; import statsmodels; import skimage; import seaborn; import datetime; import os; import shutil"'
+                        sh 'podman run -it --rm localhost/$IMAGE_NAME python -c "import numpy; import scipy; import matplotlib; import pandas; import Bio; import statsmodels; import skimage; import seaborn; import datetime; import os; import shutil; import torch; import torchvision; import torchaudio"'
                         sh 'podman run -d --name=$IMAGE_NAME --rm -p 8888:8888 localhost/$IMAGE_NAME start-notebook.sh --NotebookApp.token="jenkinstest"'
                         sh 'sleep 10 && curl -v http://localhost:8888/lab?token=jenkinstest 2>&1 | grep -P "HTTP\\S+\\s200\\s+[\\w\\s]+\\s*$"'
                         sh 'curl -v http://localhost:8888/tree?token=jenkinstest 2>&1 | grep -P "HTTP\\S+\\s200\\s+[\\w\\s]+\\s*$"'
