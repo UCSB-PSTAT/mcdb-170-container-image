@@ -4,7 +4,7 @@ MAINTAINER LSIT Systems <lsitops@lsit.ucsb.edu>
 
 USER root
 
-#RUN mamba install -y astropy <libraries>
+RUN mamba install pytorch torchvision torchaudio cpuonly -c pytorch
 
 RUN pip install matplotlib pandas biopython statsmodels scikit-image seaborn
 
