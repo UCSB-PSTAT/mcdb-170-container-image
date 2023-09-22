@@ -4,7 +4,10 @@ MAINTAINER LSIT Systems <lsitops@lsit.ucsb.edu>
 
 USER root
 
-RUN mamba install pytorch torchvision torchaudio cpuonly -c pytorch
+RUN 
+Run pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+
+
 
 RUN pip install matplotlib pandas biopython statsmodels scikit-image seaborn
 
